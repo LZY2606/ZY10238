@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>表型生长轨工坊</title>
+<link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+<header>
+  <h1>表型生长轨工坊</h1>
+  <div id="meta" class="meta"></div>
+</header>
+
+<div class="toolbar">
+  <nav class="tabs">
+    <button data-tab="individual" class="active">个体时序</button>
+    <button data-tab="offsets">换机与批次偏移</button>
+    <button data-tab="effects">处理差异/互作用</button>
+    <button data-tab="coverage">数据覆盖</button>
+    <button data-tab="runs">分析运行</button>
+  </nav>
+  <div class="actions">
+    <button id="btnBoundary">确认换机边界</button>
+    <button id="btnToggleRef">移除重叠参照</button>
+    <button id="btnReplay">导出重放包</button>
+    <button id="btnReseed">清空并重导入</button>
+  </div>
+</div>
+
+<div id="warnings" class="warnings"></div>
+
+<section id="tab-individual" class="tab active">
+  <div class="controls">
+    <label>个体 <select id="plantSel"></select></label>
+    <label>性状 <select id="traitSel"></select></label>
+    <label><input type="checkbox" id="showAdjusted" checked> 叠加偏移校正</label>
+  </div>
+  <div id="plantInfo" class="plant-info"></div>
+  <div id="chart" class="chart"></div>
+  <h3>原始观测（同时点重复保留为独立行）</h3>
+  <table id="obsTable" class="data">
+    <thead><tr><th>ID</th><th>天</th><th>原始值</th><th>相机</th><th>重复</th><th>质量</th><th>操作</th></tr></thead>
+    <tbody></tbody>
+  </table>
+</section>
+
+<section id="tab-offsets" class="tab">
+  <h2>相机更换偏移</h2>
+  <div id="cameraOffset"></div>
+  <h2>批次（盘位置）偏移</h2>
+  <div id="batchOffset"></div>
+</section>
+
+<section id="tab-effects" class="tab">
+  <h2>设计矩阵</h2>
+  <div id="designMatrix"></div>
+  <h2>处理效应与基因型×处理互作用</h2>
+  <div id="effects"></div>
+</section>
+
+<section id="tab-coverage" class="tab">
+  <h2>个体 × 性状覆盖</h2>
+  <table id="coverageTable" class="data">
+    <thead><tr><th>个体</th><th>基因型</th><th>处理</th><th>批次</th><th>参照</th><th>性状</th>
+      <th>总数</th><th>OK</th><th>疑点</th><th>排除</th><th>时间范围</th><th>成像天数</th></tr></thead>
+    <tbody></tbody>
+  </table>
+</section>
+
+<section id="tab-runs" class="tab">
+  <div class="controls">
+    <input id="runLabel" placeholder="本次分析名称，如 9月22日复核">
+    <button id="btnRun">固化为运行记录</button>
+  </div>
+  <table id="runsTable" class="data">
+    <thead><tr><th>ID</th><th>名称</th><th>创建时间</th><th>设计版本</th><th>fixture</th><th>预处理版本</th><th>操作</th></tr></thead>
+    <tbody></tbody>
+  </table>
+</section>
+
+<script src="/static/app.js"></script>
+</body>
+</html>

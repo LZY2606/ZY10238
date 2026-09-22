@@ -1,0 +1,35 @@
+* { box-sizing: border-box; }
+body { margin: 0; font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; color: #20302a; background: #f4f7f4; }
+header { background: #245b3b; color: #fff; padding: 14px 24px; }
+header h1 { margin: 0; font-size: 22px; }
+.meta { font-size: 12px; opacity: .85; margin-top: 4px; }
+.toolbar { display: flex; justify-content: space-between; align-items: center; padding: 10px 24px; background: #e7efe8; border-bottom: 1px solid #cddccf; flex-wrap: wrap; gap: 8px; }
+.tabs button, .actions button, .controls button { border: 1px solid #245b3b; background: #fff; color: #245b3b; padding: 6px 12px; border-radius: 4px; cursor: pointer; margin-right: 6px; font-size: 13px; }
+.tabs button.active { background: #245b3b; color: #fff; }
+.tab { display: none; padding: 18px 24px; }
+.tab.active { display: block; }
+.controls { margin-bottom: 12px; font-size: 14px; }
+.controls select, .controls input { padding: 5px 8px; margin: 0 10px 0 4px; }
+.warnings { padding: 0 24px; }
+.warning { background: #fff4e5; border: 1px solid #e0b07a; color: #7a4e12; padding: 8px 12px; border-radius: 4px; margin-top: 10px; font-size: 13px; }
+.plant-info { font-size: 13px; color: #446; margin-bottom: 6px; }
+.chart { background: #fff; border: 1px solid #cddccf; border-radius: 6px; padding: 10px; overflow-x: auto; }
+table.data { border-collapse: collapse; width: 100%; background: #fff; font-size: 12px; margin-top: 8px; }
+table.data th, table.data td { border: 1px solid #d5dfd7; padding: 5px 7px; text-align: left; }
+table.data th { background: #e7efe8; }
+.q-OK { color: #245b3b; font-weight: 600; }
+.q-SUSPECT { color: #b07a16; font-weight: 600; }
+.q-EXCLUDED { color: #b03a2e; text-weight: 600; }
+.card { background: #fff; border: 1px solid #cddccf; border-radius: 6px; padding: 12px 14px; margin: 10px 0; }
+.badge { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 11px; margin-left: 6px; }
+.badge.ok { background: #dff0e2; color: #245b3b; }
+.badge.na { background: #fbe4df; color: #9a3324; }
+.badge.warn { background: #fdeecb; color: #7a4e12; }
+.grid-matrix { display: grid; gap: 6px; }
+.cell-box { border: 1px solid #cddccf; border-radius: 6px; padding: 8px; background: #fff; font-size: 12px; }
+.cell-box.gap { background: #fbe4df; border-color: #d99; }
+.cell-box.single { background: #fdf6e0; }
+.legend { font-size: 12px; margin: 6px 0; }
+.legend span { margin-right: 14px; }
+.swatch { display:inline-block; width:12px; height:12px; border-radius:2px; vertical-align:-1px; margin-right:4px;}
+button.small { padding: 2px 7px; font-size: 11px; margin: 0 2px; }

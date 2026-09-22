@@ -1,0 +1,236 @@
+{
+  "fixtureVersion": "pheno-v1",
+  "seed": 20260922,
+  "description": "表型生长轨工坊固定演示试验：一次相机更换、两个批次、一个仅单批次的处理组合与一个缺失组合。",
+  "days": [
+    0,
+    2,
+    4,
+    6,
+    8,
+    10,
+    12,
+    14,
+    16,
+    18,
+    20,
+    22,
+    24,
+    26,
+    28
+  ],
+  "cameraSwitchDay": 14,
+  "cameraOverlapDays": [
+    10,
+    12,
+    14
+  ],
+  "batches": [
+    {
+      "id": "B1",
+      "label": "批次1-南棚",
+      "trayOffset": 3.0
+    },
+    {
+      "id": "B2",
+      "label": "批次2-北棚",
+      "trayOffset": -2.0
+    }
+  ],
+  "genotypes": [
+    {
+      "id": "G1",
+      "label": "基因型G1"
+    },
+    {
+      "id": "G2",
+      "label": "基因型G2"
+    },
+    {
+      "id": "G3",
+      "label": "基因型G3"
+    }
+  ],
+  "treatments": [
+    {
+      "id": "CTRL",
+      "label": "对照"
+    },
+    {
+      "id": "STRESS",
+      "label": "胁迫"
+    }
+  ],
+  "cells": [
+    {
+      "genotype": "G1",
+      "treatment": "CTRL",
+      "batches": [
+        "B1",
+        "B2"
+      ],
+      "plantsPerBatch": 3
+    },
+    {
+      "genotype": "G1",
+      "treatment": "STRESS",
+      "batches": [
+        "B1",
+        "B2"
+      ],
+      "plantsPerBatch": 3
+    },
+    {
+      "genotype": "G2",
+      "treatment": "CTRL",
+      "batches": [
+        "B1",
+        "B2"
+      ],
+      "plantsPerBatch": 3
+    },
+    {
+      "genotype": "G2",
+      "treatment": "STRESS",
+      "batches": [
+        "B1",
+        "B2"
+      ],
+      "plantsPerBatch": 3
+    },
+    {
+      "genotype": "G3",
+      "treatment": "STRESS",
+      "batches": [
+        "B2"
+      ],
+      "plantsPerBatch": 3
+    }
+  ],
+  "references": [
+    {
+      "plantCode": "REF-01",
+      "genotype": "G1",
+      "treatment": "CTRL",
+      "batch": "B1"
+    },
+    {
+      "plantCode": "REF-02",
+      "genotype": "G2",
+      "treatment": "CTRL",
+      "batch": "B2"
+    }
+  ],
+  "traits": [
+    {
+      "id": "leaf_area",
+      "label": "叶面积",
+      "unit": "cm2",
+      "base": 6.0,
+      "asymptote": {
+        "G1": 150.0,
+        "G2": 120.0,
+        "G3": 100.0
+      },
+      "rate": {
+        "G1": 0.16,
+        "G2": 0.13,
+        "G3": 0.11
+      },
+      "stressAsymFactor": 0.72,
+      "plantSigma": 7.0,
+      "noiseSigma": 4.0,
+      "cameraOffset": 8.0,
+      "imaging": true
+    },
+    {
+      "id": "height",
+      "label": "株高",
+      "unit": "cm",
+      "base": 2.0,
+      "asymptote": {
+        "G1": 62.0,
+        "G2": 52.0,
+        "G3": 46.0
+      },
+      "rate": {
+        "G1": 0.14,
+        "G2": 0.12,
+        "G3": 0.1
+      },
+      "stressAsymFactor": 0.8,
+      "plantSigma": 3.0,
+      "noiseSigma": 1.6,
+      "cameraOffset": 2.0,
+      "imaging": true
+    },
+    {
+      "id": "canopy_width",
+      "label": "冠幅",
+      "unit": "cm",
+      "base": 1.5,
+      "asymptote": {
+        "G1": 34.0,
+        "G2": 29.0,
+        "G3": 26.0
+      },
+      "rate": {
+        "G1": 0.15,
+        "G2": 0.125,
+        "G3": 0.105
+      },
+      "stressAsymFactor": 0.85,
+      "plantSigma": 1.6,
+      "noiseSigma": 1.0,
+      "cameraOffset": -1.0,
+      "imaging": true
+    },
+    {
+      "id": "mass",
+      "label": "质量标志",
+      "unit": "g",
+      "base": 0.05,
+      "asymptote": {
+        "G1": 24.0,
+        "G2": 19.0,
+        "G3": 16.0
+      },
+      "rate": {
+        "G1": 0.12,
+        "G2": 0.1,
+        "G3": 0.09
+      },
+      "stressAsymFactor": 0.7,
+      "plantSigma": 1.0,
+      "noiseSigma": 0.8,
+      "cameraOffset": 0.0,
+      "imaging": false
+    }
+  ],
+  "massDays": [
+    4,
+    12,
+    20,
+    28
+  ],
+  "massEveryNthPlant": 3,
+  "massFirstIndex": 0,
+  "injections": [
+    {
+      "kind": "duplicate",
+      "plantIndex": 0,
+      "day": 6,
+      "trait": "leaf_area",
+      "repeatQuality": "SUSPECT",
+      "repeatOffset": 9.0
+    },
+    {
+      "kind": "outlier",
+      "plantCode": "REF-02",
+      "day": 22,
+      "trait": "height",
+      "offset": 12.0,
+      "quality": "SUSPECT"
+    }
+  ]
+}
